@@ -1,72 +1,69 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../icons/LinkedIn.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import Socials from '../components/Socials.astro';
-import MailIcon from '../icons/Mail.astro';
-import BriefcaseIcon from '../icons/Briefcase.astro';
-import CodeIcon from '../icons/Code.astro';
-import ExperienceList from '../components/ExperienceList.astro';
-import Container from '../components/Container.astro';
-import Projects from '../components/Projects.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import Socials from "../components/Socials.astro";
+import MailIcon from "../icons/Mail.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import ExperienceList from "../components/ExperienceList.astro";
+import Container from "../components/Container.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <!-- TODO - Add description -->
-<Layout title="Michael's Portfolio - Web Developer" description=''>
-    <main class='px-4'>
-        <Container class='py-44 pb-32'>
-            <h1
-                class='text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10'
-            >
+<Layout title="Michael's Portfolio - Web Developer" description="">
+    <main class="px-4">
+        <Container class="py-44 pb-32">
+            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
                 Hi! I'm Michael
                 <a
-                    href='https://linkedin.com/in/michael-gonzalez-dev'
-                    target='_blank'
-                    rel='noopener'
-                    class='flex justify-center items-center'
+                    href="https://linkedin.com/in/michael-gonzalez-dev"
+                    target="_blank"
+                    rel="noopener"
+                    class="flex justify-center items-center"
                 >
                     <Badge>Disponible</Badge>
                 </a>
             </h1>
-            <h2 class='text-xl text-wrap max-w-3xl'>
+            <h2 class="text-xl text-wrap max-w-3xl">
                 Web developer, conding enthusiast, and future
-                <span class='text-purple-400'>Systems Engineer</span>. I am
-                committed to development best practices, ensuring efficiency,
-                quality, and reliability in every project I dive into. Let's
-                level up the web together!
+                <span class="text-purple-400">Systems Engineer</span>. I am committed to development best practices,
+                ensuring efficiency, quality, and reliability in every project I dive into. Let's level up the web
+                together!
             </h2>
 
-            <nav class='flex gap-4 mt-8 flex-wrap'>
+            <nav class="flex gap-4 mt-8 flex-wrap">
                 <!-- sgvl -->
                 <!-- tabler icons -->
-                <Socials href='https://linkedin.com/in/michael-gonzalez-dev'>
-                    <LinkedInIcon class='size-3 md:size-5' />
+                <Socials href="https://linkedin.com/in/michael-gonzalez-dev">
+                    <LinkedInIcon class="size-3 md:size-5" />
                     LinkedIn
                 </Socials>
-                <Socials href='https://github.com/miklegonza'>
-                    <GitHubIcon class='size-3 md:size-6' />
+                <Socials href="https://github.com/miklegonza">
+                    <GitHubIcon class="size-3 md:size-6" />
                     GitHub
                 </Socials>
-                <Socials href='mailto:gonzalez.michael1803@gmail.com'>
-                    <MailIcon class='size-3 md:size-6' />
+                <Socials href="mailto:gonzalez.michael1803@gmail.com">
+                    <MailIcon class="size-3 md:size-6" />
                     Mail
                 </Socials>
                 <!-- TODO - Add more -->
             </nav>
         </Container>
 
-        <Container id='experience'>
-            <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
-                <BriefcaseIcon class='size-7' />
+        <Container id="experience">
+            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+                <BriefcaseIcon class="size-7" />
                 Experience
             </h2>
             <ExperienceList />
         </Container>
 
-        <Container id='projects'>
-            <h2 class='text-2xl font-semibold mb-6 flex gap-x-3 items-center'>
-                <CodeIcon class='size-7' />
+        <Container id="projects">
+            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+                <CodeIcon class="size-7" />
                 Projects
             </h2>
             <Projects />

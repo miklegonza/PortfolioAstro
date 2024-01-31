@@ -1,5 +1,5 @@
 ---
-import Card from './Card.astro';
+import Card from "./Card.astro";
 
 interface Repos {
     full_name: string;
@@ -8,7 +8,7 @@ interface Repos {
     description: string;
 }
 
-const USER = 'miklegonza';
+const USER = "miklegonza";
 
 const urlMikle = `https://api.github.com/users/${USER}/repos?per_page=4&sort=desc`;
 const urlDNO = `https://api.github.com/repos/DataNetworkOverlock/dno-api`;
@@ -31,10 +31,10 @@ const PROJECTS = repositories.map((repository: Repos) => {
 }); */
 const PROJECTS = [
     {
-        full_name: 'Mirepoo',
-        html_url: 'https://google.com/',
-        language: 'Golang',
-        description: 'Humilde descripción',
+        full_name: "Mirepoo",
+        html_url: "https://google.com/",
+        language: "Golang",
+        description: "Humilde descripción",
     },
 ];
 ---
