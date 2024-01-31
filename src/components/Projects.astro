@@ -1,0 +1,50 @@
+---
+import Card from './Card.astro';
+
+interface Repos {
+    full_name: string;
+    html_url: string;
+    language: string;
+    description: string;
+}
+
+const USER = 'miklegonza';
+
+const urlMikle = `https://api.github.com/users/${USER}/repos?per_page=4&sort=desc`;
+const urlDNO = `https://api.github.com/repos/DataNetworkOverlock/dno-api`;
+const urlHL = `https://api.github.com/repos/Hack3rsL4b/Hack3rsL4b.github.io`;
+
+/* const responseMikle = await fetch(urlMikle);
+const responseDNO = await fetch(urlDNO);
+const responseHL = await fetch(urlHL);
+const repositories = await responseMikle.json();
+
+console.log(repositories);
+
+const PROJECTS = repositories.map((repository: Repos) => {
+    return {
+        full_name: repository.full_name,
+        html_url: repository.html_url,
+        language: repository.language,
+        description: repository.description,
+    };
+}); */
+const PROJECTS = [
+    {
+        full_name: 'Mirepoo',
+        html_url: 'https://google.com/',
+        language: 'Golang',
+        description: 'Humilde descripción',
+    },
+];
+---
+
+<ol>
+    {
+        PROJECTS.map((project: Repos) => (
+            <li>
+                <Card {...project} />
+            </li>
+        ))
+    }
+</ol>

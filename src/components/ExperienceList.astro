@@ -1,0 +1,23 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCE = [
+    {
+        date: 'February 2023 - August 2023',
+        title: 'Backend Developer Trainee',
+        where: 'Banco Popular - ADL Digital Lab',
+        description:
+            "I designed and developed a WhatsApp Chatbot with NodeJS using OpenAI's AI models, facilitating an agile and efficient communication channel to address Scrum and Agile queries. I worked within the Scrum framework, participating in Sprint planning and regular demonstrations.",
+    },
+];
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700 ml-3'>
+    {
+        EXPERIENCE.map((exp) => (
+            <li class='mb-10 ms-4'>
+                <ExperienceItem {...exp} />
+            </li>
+        ))
+    }
+</ol>
