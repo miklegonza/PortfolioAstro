@@ -36,10 +36,22 @@ const PROJECTS = [
         language: "Golang",
         description: "Humilde descripción",
     },
+    {
+        full_name: "Otro repo",
+        html_url: "https://google.com/",
+        language: "Typescript",
+        description: "Humilde descripción",
+    },
+    {
+        full_name: "eltercero",
+        html_url: "https://google.com/",
+        language: "Java",
+        description: "Humilde descripción",
+    },
 ];
 ---
 
-<ol>
+<ol class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-10 gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 text-left">
     {
         PROJECTS.map((project: Repos) => (
             <li>
