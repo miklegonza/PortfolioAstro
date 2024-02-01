@@ -2,37 +2,42 @@
 interface Props {
     full_name: string;
     html_url: string;
-    language: string;
+    languages: string[];
     description: string;
 }
 
-const { full_name, html_url, language, description } = Astro.props;
+const { full_name, html_url, languages, description } = Astro.props;
 ---
 
-<div class="flex flex-col w-full border rounded-lg h-full shadow bg-white/5 border-white/10">
+<div class="flex flex-col w-full border rounded-lg h-full shadow bg-white/5 border-white/10 text-pretty">
     <a href="#">
-        <img
+        <!-- <img
             class="rounded-t-lg"
             src="https://img.freepik.com/fotos-premium/oficina-estilo-moderno-suelo-hormigon-visto-muchas-plantas-representacion-3d_651547-217.jpg"
             alt=""
-        />
+        /> -->
     </a>
     <div class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
+            <h5 class="mb-2 text-base font-bold tracking-tight text-white">
                 {full_name}
             </h5>
         </a>
-        <p class="mb-3 font-normal text-gray-400">
+        <p class="mb-3 text-sm font-normal text-gray-400">
             {description}
         </p>
-        <p class="mb-3 font-normal text-gray-400">
-            {language}
+        <p class="mb-3 text-xs font-normal text-gray-400">
+            | 
+            {
+                languages.map(language => (
+                    language + " | "
+                ))
+            }
         </p>
         <a
             href=`${html_url}`
             target="_blank"
-            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
         >
             Read more
             <svg

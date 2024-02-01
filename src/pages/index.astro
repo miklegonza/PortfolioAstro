@@ -24,7 +24,7 @@ import Projects from "../components/Projects.astro";
                     rel="noopener"
                     class="flex justify-center items-center"
                 >
-                    <Badge>Disponible</Badge>
+                    <Badge>Available</Badge>
                 </a>
             </h1>
             <h2 class="text-xl text-wrap max-w-3xl">
@@ -53,20 +53,20 @@ import Projects from "../components/Projects.astro";
             </nav>
         </Container>
 
-        <Container id="experience">
-            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-                <BriefcaseIcon class="size-7" />
-                Experience
-            </h2>
-            <ExperienceList />
-        </Container>
-
         <Container id="projects">
             <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
                 <CodeIcon class="size-7" />
                 Projects
             </h2>
             <Projects />
+        </Container>
+
+        <Container id="experience">
+            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+                <BriefcaseIcon class="size-7" />
+                Experience
+            </h2>
+            <ExperienceList />
         </Container>
     </main>
 </Layout>

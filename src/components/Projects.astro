@@ -4,17 +4,18 @@ import Card from "./Card.astro";
 interface Repos {
     full_name: string;
     html_url: string;
-    language: string;
+    languages: string[];
     description: string;
 }
 
+/* 
 const USER = "miklegonza";
 
 const urlMikle = `https://api.github.com/users/${USER}/repos?per_page=4&sort=desc`;
 const urlDNO = `https://api.github.com/repos/DataNetworkOverlock/dno-api`;
 const urlHL = `https://api.github.com/repos/Hack3rsL4b/Hack3rsL4b.github.io`;
 
-/* const responseMikle = await fetch(urlMikle);
+const responseMikle = await fetch(urlMikle);
 const responseDNO = await fetch(urlDNO);
 const responseHL = await fetch(urlHL);
 const repositories = await responseMikle.json();
@@ -31,27 +32,48 @@ const PROJECTS = repositories.map((repository: Repos) => {
 }); */
 const PROJECTS = [
     {
-        full_name: "Mirepoo",
-        html_url: "https://google.com/",
-        language: "Golang",
-        description: "Humilde descripción",
+        full_name: "Data Network Overlock's API",
+        html_url: "https://github.com/DataNetworkOverlock/dno-api",
+        languages: ["Typescript", "MySQL", "DigitalOcean"],
+        description: "Data Network Overlock's API REST to integrate the database with the Application.",
     },
     {
-        full_name: "Otro repo",
-        html_url: "https://google.com/",
-        language: "Typescript",
-        description: "Humilde descripción",
+        full_name: "Cypher Demo",
+        html_url: "https://github.com/miklegonza/Demo-Cifrado",
+        languages: ["Javascript", "NodeJS"],
+        description: "Web App to encrypt plain text files and send them between registered users.",
     },
     {
-        full_name: "eltercero",
-        html_url: "https://google.com/",
-        language: "Java",
-        description: "Humilde descripción",
+        full_name: "Moneybox Backend",
+        html_url: "https://github.com/miklegonza/moneybox-backend",
+        languages: ["Javascript", "MariaDB"],
+        description:
+            "Moneybox's backend application built with NodeJS and Express framework that connects to a MariaDB database.",
+    },
+    {
+        full_name: "Graphs Project",
+        html_url: "https://github.com/miklegonza/ProyectoGrafos",
+        languages: ["Java"],
+        description: "Java application to create a graph and print BFS and DFS algorithms.",
+    },
+    {
+        full_name: "Hack3rsL4b's webpage",
+        html_url: "https://github.com/Hack3rsL4b/Hack3rsL4b.github.io",
+        languages: ["HTML", "CSS"],
+        description: "Information Security Think Tank's provisional website, from San Buenaventura University.",
+    },
+    {
+        full_name: "access-control-php",
+        html_url: "https://github.com/miklegonza/access-control-php",
+        languages: ["PHP", "HTML"],
+        description: "Simple web page with access control written in PHP ( ._.)",
     },
 ];
 ---
 
-<ol class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-10 gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 text-left">
+<ol
+    class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-10 gap-y-4 sm:gap-x-4 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20"
+>
     {
         PROJECTS.map((project: Repos) => (
             <li>
