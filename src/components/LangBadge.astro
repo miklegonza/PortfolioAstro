@@ -1,12 +1,15 @@
 ---
 interface Props {
-    language: string;
+    name: string;
+    color: string;
+    logo: string;
 }
 
-const { language } = Astro.props;
+const { name, color, logo } = Astro.props;
 ---
 
 <img
+    class="p-1"
     alt="Static Badge"
-    src="https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"
+    src=`https://img.shields.io/badge/${name}-${color}?style=flat&logo=${logo}&logoColor=white`
 />
