@@ -1,8 +1,16 @@
 ---
+import LangBadge from "./LangBadge.astro";
+
+interface Badge {
+    name: string;
+    color: string;
+    logo: string;
+}
+
 interface Props {
     full_name: string;
     html_url: string;
-    languages: string[];
+    languages: Badge[];
     description: string;
 }
 
@@ -26,13 +34,8 @@ const { full_name, html_url, languages, description } = Astro.props;
         <p class="mb-3 text-sm font-normal text-gray-400">
             {description}
         </p>
-        <p class="mb-3 text-xs font-normal text-gray-400">
-            | 
-            {
-                languages.map(language => (
-                    language + " | "
-                ))
-            }
+        <p class="flex flex-wrap-reverse mb-3">
+            {languages.map((language: Badge) => <LangBadge {...language} />)}
         </p>
         <a
             href=`${html_url}`

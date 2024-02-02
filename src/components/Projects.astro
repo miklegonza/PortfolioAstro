@@ -4,8 +4,14 @@ import Card from "./Card.astro";
 interface Repos {
     full_name: string;
     html_url: string;
-    languages: string[];
+    languages: Badge[];
     description: string;
+}
+
+interface Badge {
+    name: string;
+    color: string;
+    logo: string;
 }
 
 /* 
@@ -30,42 +36,96 @@ const PROJECTS = repositories.map((repository: Repos) => {
         description: repository.description,
     };
 }); */
+
+const BADGES = {
+    javascript: {
+        name: "Javascript",
+        color: "F7DF1E",
+        logo: "javascript",
+    },
+    typescript: {
+        name: "Typescript",
+        color: "3178C6",
+        logo: "typescript",
+    },
+    java: {
+        name: "Java",
+        color: "437291",
+        logo: "openjdk",
+    },
+    nodejs: {
+        name: "NodeJS",
+        color: "339933",
+        logo: "node.js",
+    },
+    php: {
+        name: "PHP",
+        color: "777BB4",
+        logo: "php",
+    },
+    mysql: {
+        name: "MySQL",
+        color: "4479A1",
+        logo: "mysql",
+    },
+    mariadb: {
+        name: "MariaDB",
+        color: "003545",
+        logo: "mariadb",
+    },
+    digitalocean: {
+        name: "DigitalOcean",
+        color: "0080FF",
+        logo: "digitalocean",
+    },
+    html: {
+        name: "HTML",
+        color: "E34F26",
+        logo: "html5",
+    },
+    css: {
+        name: "CSS",
+        color: "1572B6",
+        logo: "css3",
+    },
+};
+
 const PROJECTS = [
     {
         full_name: "Data Network Overlock's API",
         html_url: "https://github.com/DataNetworkOverlock/dno-api",
-        languages: ["Typescript", "MySQL", "DigitalOcean"],
+        languages: [BADGES.typescript, BADGES.mysql, BADGES.digitalocean],
         description: "Data Network Overlock's API REST to integrate the database with the Application.",
     },
     {
         full_name: "Cypher Demo",
         html_url: "https://github.com/miklegonza/Demo-Cifrado",
-        languages: ["Javascript", "NodeJS"],
+        languages: [BADGES.javascript, BADGES.nodejs],
         description: "Web App to encrypt plain text files and send them between registered users.",
     },
     {
         full_name: "Moneybox Backend",
         html_url: "https://github.com/miklegonza/moneybox-backend",
-        languages: ["Javascript", "MariaDB"],
+        languages: [BADGES.javascript, BADGES.mariadb],
         description:
             "Moneybox's backend application built with NodeJS and Express framework that connects to a MariaDB database.",
     },
     {
         full_name: "Graphs Project",
         html_url: "https://github.com/miklegonza/ProyectoGrafos",
-        languages: ["Java"],
+        languages: [BADGES.java],
         description: "Java application to create a graph and print BFS and DFS algorithms.",
     },
     {
         full_name: "Hack3rsL4b's webpage",
         html_url: "https://github.com/Hack3rsL4b/Hack3rsL4b.github.io",
-        languages: ["HTML", "CSS"],
+        languages: [BADGES.html, BADGES.css],
         description: "Information Security Think Tank's provisional website, from San Buenaventura University.",
     },
     {
         full_name: "access-control-php",
         html_url: "https://github.com/miklegonza/access-control-php",
-        languages: ["PHP", "HTML"],
+        languages: [BADGES.php, BADGES.html],
         description: "Simple web page with access control written in PHP ( ._.)",
     },
 ];
