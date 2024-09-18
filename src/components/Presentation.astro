@@ -1,0 +1,54 @@
+---
+import GitHubIcon from '../icons/GitHub.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import MailIcon from '../icons/Mail.astro';
+import Badge from './Badge.astro';
+import Socials from './Socials.astro';
+---
+
+<section class="flex flex-col md:flex-row justify-between items-center gap-6">
+    <article>
+        <div class="relative">
+            <div class="absolute shadow rounded-lg w-full h-full top-0 left-0 bg-gray-700 -rotate-6"></div>
+            <img
+                class="rounded-lg aspect-square md:aspect-auto object-cover -rotate-3"
+                src="https://placehold.it/350x450"
+                alt="Michael's picture"
+                width="350"
+            />
+        </div>
+    </article>
+    <article>
+        <div class="flex justify-start items-center gap-5 pb-6 lg:pb-10">
+            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4">Hi! I'm Michael</h1>
+            <a
+                href="https://linkedin.com/in/michael-gonzalez-dev"
+                target="_blank"
+                rel="noopener"
+                class="flex justify-center items-center"
+            >
+                <Badge>Available</Badge>
+            </a>
+        </div>
+        <p class="text-xl text-wrap max-w-3xl">
+            Web developer, coding enthusiast, and
+            <span class="text-purple-400">Systems Engineer</span>. I am committed to development best practices,
+            ensuring efficiency, quality, and reliability in every project I dive into. Let's level up the web together!
+        </p>
+
+        <section class="flex flex-wrap gap-4 mt-8">
+            <Socials href="https://linkedin.com/in/michael-gonzalez-dev">
+                <LinkedInIcon class="size-3 md:size-5" />
+                LinkedIn
+            </Socials>
+            <Socials href="https://github.com/miklegonza">
+                <GitHubIcon class="size-3 md:size-6" />
+                GitHub
+            </Socials>
+            <Socials href="mailto:gonzalez.michael1803@gmail.com">
+                <MailIcon class="size-3 md:size-6" />
+                Mail
+            </Socials>
+        </section>
+    </article>
+</section>
