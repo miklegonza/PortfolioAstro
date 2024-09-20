@@ -1,7 +1,9 @@
 ---
+import ArrowRight from "../icons/ArrowRight.astro";
+import Badge from "./Badge.astro";
 import LangBadge from "./LangBadge.astro";
 
-interface Badge {
+interface BadgeElement {
     name: string;
     color: string;
     logo: string;
@@ -10,53 +12,41 @@ interface Badge {
 interface Props {
     full_name: string;
     html_url: string;
-    languages: Badge[];
+    languages: BadgeElement[];
     description: string;
+    type: string;
 }
 
-const { full_name, html_url, languages, description } = Astro.props;
+const { full_name, html_url, languages, description, type } = Astro.props;
 ---
 
-<div class="flex flex-col w-full border rounded-lg h-full shadow bg-white/5 border-white/10 text-pretty">
-    <a href="#">
-        <!-- <img
-            class="rounded-t-lg"
+<div class="flex w-full border rounded-lg h-full shadow bg-white/5 border-white/10 text-pretty">
+    <!-- <a href=`${html_url}` target="_blank" rel="noopener noreferrer">
+        <img
+            class="rounded-l-lg object-cover w-full h-full"
             src="https://img.freepik.com/fotos-premium/oficina-estilo-moderno-suelo-hormigon-visto-muchas-plantas-representacion-3d_651547-217.jpg"
             alt=""
-        /> -->
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-base font-bold tracking-tight text-white">
-                {full_name}
-            </h5>
-        </a>
+        />
+    </a> -->
+    <div class="relative p-5">
+        <h5 class="mb-2 text-base font-bold tracking-tight text-white">
+            {full_name}
+            <Badge class="ms-4">{type}</Badge>
+        </h5>
         <p class="mb-3 text-sm font-normal text-gray-400">
             {description}
         </p>
-        <p class="flex flex-wrap-reverse mb-3">
-            {languages.map((language: Badge) => <LangBadge {...language} />)}
+        <p class="flex flex-wrap mb-3 w-3/5">
+            {languages.map((language: BadgeElement) => <LangBadge {...language} />)}
         </p>
         <a
             href=`${html_url}`
             target="_blank"
-            class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            class="absolute right-0 bottom-0 m-4 inline-flex items-center px-3 py-1.5 text-xs font-normal text-center text-white rounded-lg focus:ring-2 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+            rel="noopener noreferrer"
         >
             Read more
-            <svg
-                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg>
+            <ArrowRight />
         </a>
     </div>
 </div>
