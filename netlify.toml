@@ -1,0 +1,4 @@
+[[redirects]]
+from = "https://michaelgonzalez.live/*"
+to = "https://michaelgonzalez.dev/:splat"
+status = 301
